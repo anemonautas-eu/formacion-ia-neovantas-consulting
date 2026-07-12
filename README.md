@@ -1,9 +1,19 @@
 # Formación IA Generativa Aplicada
 
-# Welcome!
+# Welcome Neovantas!
 
 En este repositorio Github nos servirá de base para trabajar y desarrollar conceptos
 de manera práctica. 
+
+Aquí compartiremos materiales y servirá como método de evaluación durante toda la formación. Puedes acceder al contenido general del Programa Técnico de IA Generativa Aplicada [aquí](contenidos-curso.md). Será también el repositorio base 
+
+Utilizaremos este repositorio para consolidar el conocimiento en Git 
+y Github, esencial desde nuestro punto de vista para adquirir 
+autonomía en IA Generativa.
+
+
+Este repositorio será utilizado también como prueba y evidencia de evaluación. 
+
 
 
 ## El equipo.
