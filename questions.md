@@ -2,6 +2,6 @@
 
 ## Módulo I
 
-- autor
-- pregunta
-- respuesta
+- autor: Alba
+- pregunta: Encoders-Decoders
+- respuesta: Esperando
