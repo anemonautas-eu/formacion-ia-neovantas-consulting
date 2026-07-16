@@ -30,6 +30,8 @@ resultado esperado: Un commit con un cambio de na linea por cabeza.
 
 todo-002: Una PR con el objetivo de este grupo en esta formación. El resultado esperado es 
 
+Hola soy Claudia, espero aprender sobre la arquitectura de la IA 
+
 
 ## Agentes e Integración IA
 
