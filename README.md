@@ -25,7 +25,7 @@ Y si nos presentamos?
 todo-001: Una PR con la presentación de todos los participantes, 
 resultado esperado: Un commit con un cambio de na linea por cabeza. 
 
-- Hola, soy María, quier aprender cómo funciona la IA en profundidad y cómo poder aplicar en los proyectos
+- Hola, soy María, quiero aprender cómo funciona la IA en profundidad y cómo poder aplicarla en los proyectos
 
 ## Nuestro objetivo
 
