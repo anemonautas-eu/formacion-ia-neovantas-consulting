@@ -28,7 +28,11 @@ resultado esperado: Un commit con un cambio de na linea por cabeza.
 
 ## Nuestro objetivo
 
-todo-002: Una PR con el objetivo de este grupo en esta formación. El resultado esperado es 
+
+
+En este primer commit de ejemplo, vemos como hemo modificado la versión inicial. Mas abajo, vemos como el texto añadido entre tanto, tendrá conflictos que aprenderemos a resolver durante la sesion. 
+
+
 
 Hola soy Claudia, espero aprender sobre la arquitectura de la IA 
 
