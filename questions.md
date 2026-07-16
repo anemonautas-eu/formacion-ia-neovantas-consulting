@@ -2,6 +2,16 @@
 
 ## Módulo I
 
-- autor: Alba
+
+
+- autora: Alba
 - pregunta: Encoders-Decoders
 - respuesta: Esperando
+
+@arquitectos : 
+
+
+- autora: Claudia
+- pregunta: impacto de Temperatura, top p top k
+- respuesta: esperando
+
