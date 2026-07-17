@@ -23,7 +23,8 @@ Y si nos presentamos?
 ## Ejercicio
 
 todo-001: Una PR con la presentación de todos los participantes, 
-resultado esperado: Un commit con un cambio de na linea por cabeza. 
+resultado esperado: Un commit con un cambio de na linea por cabeza.
+1.
 
 
 ## Nuestro objetivo
