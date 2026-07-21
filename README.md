@@ -28,7 +28,7 @@ resultado esperado: Un commit con un cambio de na linea por cabeza.
 - Hola, soy María, quiero aprender cómo funciona la IA en profundidad y cómo poder aplicarla en los proyectos
 - Hola, soy Mateo, quiero entender el funcionamiento de la IA para conocer sus ventajas y desventajas, asi como aprender la ingenieria de un producto basado en AI
 - Hola, soy Aimée, y espero aprender los conceptos basicos y como llevarlos más alla del conocimiento.
-- Hola, soy Alba, me gustaría aprender noticiones básicas de arquitectura de IA para aprender cómo aplicarla a proyectos
+- Hola, soy Alba, me gustaría aprender nociones básicas de arquitectura de IA para aprender cómo aplicarla a proyectos
   
 ## Nuestro objetivo
 
