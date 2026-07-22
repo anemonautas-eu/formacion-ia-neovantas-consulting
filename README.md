@@ -24,13 +24,13 @@ Y si nos presentamos?
 
 todo-001: Una PR con la presentación de todos los participantes, 
 resultado esperado: Un commit con un cambio de na linea por cabeza.
-Paola Schietekat
+Hola, soy Paola y quiero poder entender la arquitectura de modelos de IA
 
 
 ## Nuestro objetivo
 
 todo-002: Una PR con el objetivo de este grupo en esta formación. El resultado esperado es 
-Poder entender la arquitectura de modelos de IA
+
 
 
 ## Agentes e Integración IA
