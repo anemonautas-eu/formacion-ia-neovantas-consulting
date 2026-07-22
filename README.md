@@ -30,6 +30,7 @@ resultado esperado: Un commit con un cambio de na linea por cabeza.
 - Hola soy Víctor, quiero entender las mejores rutinas para llevar proyectos de IA desde la ideación hasta producción.
 - Hola, soy Aimée, y espero aprender los conceptos basicos y como llevarlos más alla del conocimiento.
 - Hola, soy Alba, me gustaría aprender nociones básicas de arquitectura de IA para aprender cómo aplicarla a proyectos
+- Hola, soy Maia, quiero entender cómo funciona la IA, aprender cómo aplicarla en proyectos y conocer las mejores formas de utilizarla de manera eficiente
   
 ## Nuestro objetivo
 
