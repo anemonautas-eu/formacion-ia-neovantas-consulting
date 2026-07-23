@@ -23,7 +23,8 @@ Y si nos presentamos?
 ## Ejercicio
 
 todo-001: Una PR con la presentación de todos los participantes, 
-resultado esperado: Un commit con un cambio de na linea por cabeza. 
+resultado esperado: Un commit con un cambio de na linea por cabeza.
+Hola, soy Paola y quiero poder entender la arquitectura de modelos de IA
 
 - Hola, soy María, quiero aprender cómo funciona la IA en profundidad y cómo poder aplicarla en los proyectos
 - Hola, soy Mateo, quiero entender el funcionamiento de la IA para conocer sus ventajas y desventajas, asi como aprender la ingenieria de un producto basado en AI
@@ -39,6 +40,7 @@ resultado esperado: Un commit con un cambio de na linea por cabeza.
 todo-002: Una PR con el objetivo de este grupo en esta formación. El resultado esperado es 
 
 Hola soy Claudia, espero aprender sobre la arquitectura de la IA 
+
 
 
 ## Agentes e Integración IA
