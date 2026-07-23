@@ -23,21 +23,25 @@ Y si nos presentamos?
 ## Ejercicio
 
 todo-001: Una PR con la presentación de todos los participantes, 
-resultado esperado: Un commit con un cambio de na linea por cabeza. 
+resultado esperado: Un commit con un cambio de una linea por cabeza.
 
+- Hola, soy Paola y quiero poder entender la arquitectura de modelos de IA
 - Hola, soy María, quiero aprender cómo funciona la IA en profundidad y cómo poder aplicarla en los proyectos
 - Hola, soy Mateo, quiero entender el funcionamiento de la IA para conocer sus ventajas y desventajas, asi como aprender la ingenieria de un producto basado en AI
 - Hola soy Víctor, quiero entender las mejores rutinas para llevar proyectos de IA desde la ideación hasta producción.
 - Hola, soy Aimée, y espero aprender los conceptos basicos y como llevarlos más alla del conocimiento.
 - Hola, soy Alba, me gustaría aprender nociones básicas de arquitectura de IA para aprender cómo aplicarla a proyectos
+- Hola, soy Maia, quiero entender cómo funciona la IA, aprender cómo aplicarla en proyectos y conocer las mejores formas de utilizarla de manera eficiente
 - Hola, soy Olympia y me gustaría poder conceptualizar los usos y características de la IA para ser más eficiente en su uso en el entorno laboral
 - Hola, soy Pablo y me gustaría aprender sobre procesos de integración de IA y cómo plantear la arquitectura más óptima para un proyecto de IA
     
+
 ## Nuestro objetivo
 
 todo-002: Una PR con el objetivo de este grupo en esta formación. El resultado esperado es 
 
 Hola soy Claudia, espero aprender sobre la arquitectura de la IA 
+
 
 
 ## Agentes e Integración IA
