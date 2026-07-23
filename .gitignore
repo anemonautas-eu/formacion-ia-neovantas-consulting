@@ -3,3 +3,10 @@
 test.txt
 
 contraseña.txt
+
+__pycache__/
+*.py[cod]
+
+.venv/
+
+
