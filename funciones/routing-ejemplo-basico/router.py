@@ -7,6 +7,8 @@ from typing import Any, Literal, TypedDict
 
 
 Route = Literal["metric", "evidence", "transform", "clarify"]
+# EJERCICIO: ¿qué modelo de Gemini es más adecuado para esta tarea? ¿Por qué? 
+# ¿Qué ventajas y desventajas tiene frente a otros modelos?
 DEFAULT_MODEL = "gemini-3.5-flash-lite"
 
 
