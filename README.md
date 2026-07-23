@@ -24,8 +24,8 @@ Y si nos presentamos?
 
 todo-001: Una PR con la presentación de todos los participantes, 
 resultado esperado: Un commit con un cambio de na linea por cabeza.
-Hola, soy Paola y quiero poder entender la arquitectura de modelos de IA
 
+- Hola, soy Paola y quiero poder entender la arquitectura de modelos de IA
 - Hola, soy María, quiero aprender cómo funciona la IA en profundidad y cómo poder aplicarla en los proyectos
 - Hola, soy Mateo, quiero entender el funcionamiento de la IA para conocer sus ventajas y desventajas, asi como aprender la ingenieria de un producto basado en AI
 - Hola soy Víctor, quiero entender las mejores rutinas para llevar proyectos de IA desde la ideación hasta producción.
