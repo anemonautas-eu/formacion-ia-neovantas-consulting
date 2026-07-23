@@ -1,0 +1,316 @@
+  <!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Resumen visual e interactivo del artículo Attention Is All You Need."
+    />
+    <title>Atención, sin perder el hilo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Volver al inicio">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>Atención<br /><small>sin perder el hilo</small></span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#idea">La idea</a>
+        <a href="#mecanismo">Cómo funciona</a>
+        <a href="#arquitectura">Transformer</a>
+        <a href="#conclusiones">Conclusiones</a>
+      </nav>
+      <span class="reading-time">8 min</span>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="inicio">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Lectura guiada · Vaswani et al. · 2017</p>
+          <h1>Una palabra<br />mira a <em>todas</em><br />las demás.</h1>
+          <p class="hero-lead">
+            El Transformer eliminó la recurrencia del corazón del modelo y la
+            sustituyó por atención. Así pudo conectar contexto lejano y entrenarse
+            en paralelo con mucha más eficiencia.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#mecanismo">Probar la atención</a>
+            <a class="button ghost" href="#resumen">Leer el resumen</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Representación de palabras conectadas por atención">
+          <span class="orbit orbit-a"></span>
+          <span class="orbit orbit-b"></span>
+          <span class="word word-el">El</span>
+          <span class="word word-banco">banco</span>
+          <span class="word word-rio">río</span>
+          <span class="word word-junto">junto</span>
+          <svg viewBox="0 0 560 520" role="img" aria-label="Conexiones entre banco, río y otras palabras">
+            <path class="line faint" d="M270 255 C160 140, 110 165, 86 236" />
+            <path class="line strong" d="M280 260 C390 132, 455 172, 468 240" />
+            <path class="line medium" d="M280 270 C360 345, 394 362, 440 380" />
+            <circle cx="280" cy="260" r="8" />
+            <circle cx="468" cy="240" r="6" />
+          </svg>
+          <p class="visual-note"><strong>“banco” + “río”</strong><br />la relación aclara el significado</p>
+        </div>
+
+        <div class="hero-meta reveal">
+          <p><span>01</span> Arquitectura</p>
+          <p><span>02</span> Mecanismo</p>
+          <p><span>03</span> Evidencia</p>
+        </div>
+      </section>
+
+      <section class="summary section" id="resumen">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Resumen en 30 segundos</p>
+          <h2>El cambio de paradigma</h2>
+        </div>
+        <div class="summary-grid">
+          <article class="summary-card card-dark reveal">
+            <span class="card-number">01</span>
+            <h3>El problema</h3>
+            <p>
+              Las RNN procesaban una secuencia paso a paso. Esto dificultaba
+              paralelizar el entrenamiento y hacía más largo el camino entre
+              palabras distantes.
+            </p>
+          </article>
+          <article class="summary-card card-coral reveal">
+            <span class="card-number">02</span>
+            <h3>La propuesta</h3>
+            <p>
+              Un encoder–decoder construido con autoatención multicabeza,
+              redes feed-forward, conexiones residuales y codificación posicional.
+            </p>
+          </article>
+          <article class="summary-card card-paper reveal">
+            <span class="card-number">03</span>
+            <h3>El resultado</h3>
+            <p>
+              Mejor calidad de traducción que los sistemas comparados, menor coste
+              de entrenamiento y buena transferencia a análisis sintáctico.
+            </p>
+          </article>
+        </div>
+        <blockquote class="thesis reveal">
+          <span>La tesis</span>
+          <p>
+            Para modelar secuencias no es imprescindible recorrerlas en orden:
+            cada posición puede construir su contexto atendiendo directamente al resto.
+          </p>
+        </blockquote>
+      </section>
+
+      <section class="idea section" id="idea">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Antes y después</p>
+          <h2>De una cadena a una red</h2>
+          <p>
+            La diferencia importante es cuántos pasos necesita la información para
+            viajar entre dos posiciones de una secuencia.
+          </p>
+        </div>
+        <div class="comparison reveal">
+          <article>
+            <div class="comparison-label">RNN · paso a paso</div>
+            <div class="sequence rnn-sequence" aria-label="Procesamiento recurrente secuencial">
+              <span>El</span><i>→</i><span>banco</span><i>→</i><span>está</span><i>→</i><span>junto</span><i>→</i><span>al</span><i>→</i><span>río</span>
+            </div>
+            <dl>
+              <div><dt>Operaciones secuenciales</dt><dd>O(n)</dd></div>
+              <div><dt>Camino máximo</dt><dd>O(n)</dd></div>
+            </dl>
+          </article>
+          <div class="versus" aria-hidden="true">VS</div>
+          <article class="transformer-side">
+            <div class="comparison-label">Autoatención · en paralelo</div>
+            <div class="attention-network" aria-label="Todas las palabras pueden conectarse entre sí">
+              <span>El</span><span>banco</span><span>está</span><span>junto</span><span>al</span><span>río</span>
+              <svg viewBox="0 0 600 92" aria-hidden="true">
+                <path d="M146 50 Q300 -30 520 48" />
+                <path d="M146 50 Q300 116 520 48" />
+                <path d="M146 50 Q230 12 326 48" />
+              </svg>
+            </div>
+            <dl>
+              <div><dt>Operaciones secuenciales</dt><dd>O(1)</dd></div>
+              <div><dt>Camino máximo</dt><dd>O(1)</dd></div>
+            </dl>
+          </article>
+        </div>
+        <p class="fine-print reveal">
+          En la comparación por capa del artículo. La autoatención completa tiene un
+          coste de cómputo y memoria cuadrático respecto a la longitud: O(n²·d).
+        </p>
+      </section>
+
+      <section class="mechanism section" id="mecanismo">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Laboratorio interactivo</p>
+          <h2>¿A quién presta atención “banco”?</h2>
+          <p>
+            Selecciona una palabra. El color muestra cuánto influye cada token en la
+            representación contextual de la palabra consultada.
+          </p>
+        </div>
+
+        <div class="attention-lab reveal">
+          <div class="lab-main">
+            <p class="lab-label">Haz clic en un token</p>
+            <div class="token-row" id="token-row" aria-label="Frase interactiva"></div>
+            <div class="context-result" aria-live="polite">
+              <span>Interpretación resultante</span>
+              <strong id="interpretation">“banco” se interpreta como orilla</strong>
+            </div>
+            <div class="weight-bars" id="weight-bars" aria-label="Pesos de atención"></div>
+          </div>
+          <aside class="qkv-panel">
+            <p class="lab-label">La regla mental</p>
+            <div><span>Q</span><p><strong>Consulta</strong>Qué estoy buscando</p></div>
+            <div><span>K</span><p><strong>Clave</strong>Qué ofrece cada token</p></div>
+            <div><span>V</span><p><strong>Valor</strong>La información que aporta</p></div>
+            <code>softmax(QKᵀ / √d<sub>k</sub>) · V</code>
+          </aside>
+        </div>
+
+        <div class="steps reveal">
+          <article><span>1</span><h3>Proyectar</h3><p>Cada token genera vectores Q, K y V aprendidos.</p></article>
+          <article><span>2</span><h3>Comparar</h3><p>La consulta se compara con todas las claves mediante producto escalar.</p></article>
+          <article><span>3</span><h3>Normalizar</h3><p>Se escala y softmax convierte las puntuaciones en pesos.</p></article>
+          <article><span>4</span><h3>Mezclar</h3><p>La suma ponderada de valores produce una representación contextual.</p></article>
+        </div>
+      </section>
+
+      <section class="heads section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Atención multicabeza</p>
+          <h2>Varias miradas a la vez</h2>
+          <p>
+            Una sola cabeza comprime relaciones distintas en un único patrón. El
+            modelo original usa 8 cabezas en paralelo, cada una en un subespacio aprendido.
+          </p>
+        </div>
+        <div class="head-cards reveal">
+          <article class="head-card syntax"><span>01</span><h3>Sintaxis</h3><p>Puede vincular un verbo con su complemento.</p><div class="mini-link"><b>hizo</b><i></i><b>difícil</b></div></article>
+          <article class="head-card reference"><span>02</span><h3>Referencia</h3><p>Puede relacionar un pronombre con su antecedente.</p><div class="mini-link"><b>ley</b><i></i><b>su</b></div></article>
+          <article class="head-card context"><span>03</span><h3>Contexto</h3><p>Puede resolver el sentido de una palabra ambigua.</p><div class="mini-link"><b>banco</b><i></i><b>río</b></div></article>
+        </div>
+        <div class="caution reveal">
+          <span aria-hidden="true">!</span>
+          <p><strong>Atención no equivale a explicación.</strong> Un peso alto indica una relación útil para el cálculo del modelo; no demuestra causalidad, comprensión humana ni razonamiento consciente.</p>
+        </div>
+      </section>
+
+      <section class="architecture section" id="arquitectura">
+        <div class="section-heading reveal">
+          <p class="eyebrow">La arquitectura</p>
+          <h2>El Transformer, por capas</h2>
+          <p>
+            El artículo conserva el esquema encoder–decoder, pero cambia sus bloques internos.
+          </p>
+        </div>
+        <div class="transformer-map reveal">
+          <div class="flow-label input-label">Texto de entrada</div>
+          <div class="stack encoder-stack">
+            <div class="stack-title"><span>Encoder</span><b>× 6</b></div>
+            <div class="layer position">Embedding + posición</div>
+            <div class="layer attention">Autoatención multicabeza</div>
+            <div class="layer add">Suma residual + normalización</div>
+            <div class="layer feed">Red feed-forward por posición</div>
+            <div class="layer add">Suma residual + normalización</div>
+          </div>
+          <div class="bridge"><span>contexto</span><i>→</i></div>
+          <div class="stack decoder-stack">
+            <div class="stack-title"><span>Decoder</span><b>× 6</b></div>
+            <div class="layer position">Salida desplazada + posición</div>
+            <div class="layer attention">Autoatención enmascarada</div>
+            <div class="layer cross">Atención al encoder</div>
+            <div class="layer feed">Red feed-forward por posición</div>
+            <div class="layer add">Residual + normalización</div>
+          </div>
+          <div class="flow-label output-label">Siguiente token</div>
+        </div>
+        <div class="position-note reveal">
+          <div class="wave" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <p><strong>¿Y el orden?</strong> Como ya no hay recurrencia, se suman codificaciones posicionales sinusoidales a los embeddings para informar dónde está cada token.</p>
+        </div>
+      </section>
+
+      <section class="evidence section" id="conclusiones">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Qué demostró el artículo</p>
+          <h2>Resultados que cambiaron el campo</h2>
+        </div>
+        <div class="metrics reveal">
+          <article><strong>28,4</strong><span>BLEU</span><p>inglés → alemán<br />Transformer grande</p></article>
+          <article><strong>41,8</strong><span>BLEU</span><p>inglés → francés<br />cifra del resumen del artículo</p></article>
+          <article><strong>3,5</strong><span>días</span><p>de entrenamiento<br />en 8 GPU P100</p></article>
+          <article><strong>O(1)</strong><span>pasos</span><p>para conectar posiciones<br />dentro de una capa</p></article>
+        </div>
+        <p class="historical-note reveal">
+          Son resultados históricos reportados en el artículo sobre WMT 2014, no una
+          comparación con modelos actuales. En la sección de resultados, la cifra
+          inglés–francés aparece como 41,0; el resumen y la tabla 2 indican 41,8.
+        </p>
+
+        <div class="takeaways">
+          <article class="reveal">
+            <p class="eyebrow">Por qué funcionó</p>
+            <ul>
+              <li>Entrenamiento altamente paralelizable.</li>
+              <li>Dependencias largas con caminos muy cortos.</li>
+              <li>Varias cabezas capturan relaciones diferentes.</li>
+              <li>La misma arquitectura generaliza a otras tareas.</li>
+            </ul>
+          </article>
+          <article class="reveal">
+            <p class="eyebrow">Qué conviene matizar</p>
+            <ul>
+              <li>La autoatención completa crece cuadráticamente con la longitud.</li>
+              <li>La posición debe añadirse de forma explícita.</li>
+              <li>El decoder sigue generando token a token.</li>
+              <li>Los mapas de atención no prueban cómo “razona” el modelo.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="quiz section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Comprueba la idea</p>
+          <h2>Una pregunta para cerrar</h2>
+        </div>
+        <div class="quiz-card reveal" data-answered="false">
+          <p>¿Qué ventaja estructural aporta la autoatención frente a una RNN?</p>
+          <div class="quiz-options">
+            <button type="button" data-correct="false">Comprende el texto como una persona</button>
+            <button type="button" data-correct="true">Conecta posiciones lejanas en pocos pasos y paraleliza el entrenamiento</button>
+            <button type="button" data-correct="false">Elimina por completo el coste de procesar secuencias largas</button>
+          </div>
+          <div class="quiz-feedback" aria-live="polite">Elige una respuesta.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <p><strong>Atención, sin perder el hilo</strong><br />Recurso didáctico para la formación en IA generativa.</p>
+      </div>
+      <p>
+        Basado en <cite>Attention Is All You Need</cite>, Vaswani et al. (2017),
+        disponible en la bibliografía del curso.
+      </p>
+    </footer>
+  </body>
+</html>
